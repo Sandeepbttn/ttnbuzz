@@ -57,10 +57,17 @@
   }
   
   .topbarLink {
-    margin-right: 10px;
-    font-size: 14px;
+    /* margin-right: 10px; */
+    /* font-size: 20px; */
+    display: flex;
     cursor: pointer;
+    align-content: center;
   }
+.topbarName{
+    margin: 5px;
+    font-size: 20px;
+    /* align-content: center; */
+}
   
   .topbarIcons {
     display: flex;

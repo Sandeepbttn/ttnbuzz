@@ -15,9 +15,10 @@ export default function Topbar() {
          </div>
       </div>
       <div className="topbarRight">
-      <img src="./assets/formal.jpeg" alt="profile picture" className='topbarImg' />
+      
           <div className="topbarLink">
-              <span className="topbarLink">Sandeep Bhatt</span> 
+          <img src="./assets/formal.jpeg" alt="profile picture" className='topbarImg' />
+              <span className="topbarName">Sandeep Bhatt</span> 
           </div>
           <div className="topbarIcons">
             <div className="topbarIconItem">
