@@ -1,15 +1,15 @@
+import Home from "./pages/home/Home";
+import HomeIcon from '@mui/icons-material/Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <p>hello world</p>
-
-      <form action="/home/sandeep/VSCode/TTN-Buzz/server/index.js/post" method="post" 
-              className="form">
-          <button type="submit">Connected?</button>
-        </form>
-    </div>
-  );
+    <>
+      <HomeIcon/>
+      <Home/>
+      
+    </>
+  )
 }
 
 export default App;
