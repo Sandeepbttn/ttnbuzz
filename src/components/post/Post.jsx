@@ -2,11 +2,11 @@ import React from 'react'
 import "./post.css"
 
 import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
-import { Users } from "../../dummyData";
+import { Users } from "../../testData";
 // import { useState } from "react";
 
 
-export default function Post() {
+export default function Post({post}) {
   return (
     <div className="post">
     <div className="postWrapper">
@@ -14,21 +14,21 @@ export default function Post() {
         <div className="postTopLeft">
           <img
             className="postProfileImg"
-            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
             alt=""
           />
           <span className="postUsername">
-            Sandeep Bhatt
+          {Users.filter((u) => u.id === post?.userId)[0].username}
           </span>
-          <span className="postDate">12.4.22</span>
+          <span className="postDate">{post.date}</span>
         </div>
         <div className="postTopRight">
           <MoreVert />
         </div>
       </div>
       <div className="postCenter">
-        <span className="postText">hello my first post</span>
-        <img className="postImg" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="post image" />
+        <span className="postText">{post?.desc}</span>
+        <img className="postImg" src={post.photo} alt="post image" />
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
@@ -39,7 +39,7 @@ export default function Post() {
           
         </div>
         <div className="postBottomRight">
-          <span className="postCommentCount"> 3 comments</span>
+          <span className="postCommentCount"> {post.comment}comments</span>
         </div>
       </div>
       <div className="postLikeDislike">
