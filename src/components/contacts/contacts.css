@@ -1,0 +1,28 @@
+.contacts{
+    height: 50vh;
+    width: 20vw;
+    overflow-y: scroll;
+    background-color: blue;
+    margin: 5%;
+}
+
+.contactDetails{
+    display: flex;
+    cursor: pointer;
+    align-content: center;
+    justify-content:space-around;
+    padding: 3%;
+}
+
+.contactsName{
+    margin: 5px;
+    font-size: 18px;
+}
+.contactsImg{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+
+}
