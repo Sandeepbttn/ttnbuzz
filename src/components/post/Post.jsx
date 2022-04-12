@@ -29,9 +29,9 @@ export default function Post() {
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
-          <ThumbUp/>
+          <ThumbUp className="likeIcon"/>
           <span className="postLikeCounter"> 41</span>
-          <ThumbDown/>
+          <ThumbDown className="likeIcon"/>
           <span className="postLikeCounter"> 21</span>
           
         </div>
