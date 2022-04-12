@@ -8,7 +8,7 @@ export default function Contacts() {
     <div className="contacts">
        <div className="contactSearch"> 
            <h2>Contacts</h2>
-            <div className="searchbar">
+            <div className="contactSearchbar">
             <input placeholder='find friends' className='searchInput' />
                 <PersonSearch className='searchIcon'/>
                 
