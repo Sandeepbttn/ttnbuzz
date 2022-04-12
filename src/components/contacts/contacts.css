@@ -4,6 +4,8 @@
     overflow-y: scroll;
     /* background-color: rgb(208, 208, 245); */
     margin: 3%;
+    border-radius: 15px;
+
 }
 
 .contactSearch{
