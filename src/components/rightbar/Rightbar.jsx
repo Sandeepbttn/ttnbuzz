@@ -8,8 +8,6 @@ export default function Rightbar() {
     <div className='rightbar'>
        
          <Contacts/>
-       
-       
          <Suggestion/>
        
     </div>
