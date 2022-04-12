@@ -1,5 +1,6 @@
 import React from 'react'
 import './sidebar.css'
+import { RssFeed } from '@mui/icons-material'
 
 export default function Sidebar() {
   return (
@@ -10,13 +11,61 @@ export default function Sidebar() {
 
       <div className="sidebarBox">
         <div className="sidebarBoxRecent">
-          <h3>Recent</h3>
+          <p>Recent</p>
+          <ul className="sidebarBoxList">
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          </ul>
+          <button className="sidebarBoxBtn">show more</button>
         </div>
+        <hr/>
         <div className="sidebarBoxGroups">
-            <h3>Groups</h3>
+            <p>Groups</p>
+            <ul className="sidebarBoxList">
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          </ul>
+            <button className="sidebarBoxBtn">show more</button>
         </div>
+
+        <hr/>
         <div className="sidebarBoxSub">
-            <h3>Subscriptions</h3>
+            <p>Subscriptions</p>
+            <ul className="sidebarBoxList">
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          <li className="sidebarListItem">
+            <RssFeed className="sidebarIcon" />
+            <span className="sidebarListItemText">Feed</span>
+          </li>
+          </ul>
+            <button className="sidebarBoxBtn">show more</button>
         </div>
       </div> 
     </div>

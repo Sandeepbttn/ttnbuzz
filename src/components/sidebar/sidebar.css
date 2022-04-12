@@ -7,5 +7,35 @@
   }
   
   .userMiniProfile{
+     align-content: center;
+  }
 
+  .sidebarBox{
+    padding: 20px;
+  }
+
+  .sidebarBoxRecent{
+    padding: 10px;
+
+  }
+
+  .sidebarBoxBtn{
+  width: 150px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  }
+
+  .sidebarBoxGroups{
+    padding: 10px;
+  }
+
+  .sidebarBoxSub{
+    padding: 10px;
+
+  }
+
+  .sidebarBoxList{
+  list-style: none;
   }
