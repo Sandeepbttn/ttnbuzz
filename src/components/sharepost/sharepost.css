@@ -26,8 +26,18 @@
 
   .sharepostInput {
     border: none;
-    width: 50%;
+    width: 70%;
     height: 5vh;
     border-radius: 10px;
     background-color: rgb(247, 235, 211);
   }
+
+  .sharepostIcon{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.sharepostOptionText{
+    font-size: 18px;
+    margin-left: 5px;
+}
