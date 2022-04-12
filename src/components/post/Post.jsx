@@ -3,10 +3,30 @@ import "./post.css"
 
 import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
 import { Users } from "../../testData";
-// import { useState } from "react";
+import { useState } from "react";
 
 
 export default function Post({post}) {
+
+  // like function
+  const [like,setLike] = useState(post.like)
+  const [isLiked,setIsLiked] = useState(false)
+
+  const likeHandler =()=>{
+    setLike(isLiked ? like-1 : like+1)
+    setIsLiked(!isLiked)
+  }
+
+  // dislike function
+
+  const [dislike,setDislike] = useState(post.dislike)
+  const [isDisliked,setIsDisliked] = useState(false)
+
+  const dislikeHandler =()=>{
+    setDislike(isDisliked ? dislike-1 : dislike+1)
+    setIsDisliked(!isDisliked)
+  }
+
   return (
     <div className="post">
     <div className="postWrapper">
@@ -33,9 +53,9 @@ export default function Post({post}) {
       <div className="postBottom">
         <div className="postBottomLeft">
           <ThumbUp className="likeIcon"/>
-          <span className="postLikeCounter"> 41</span>
+          <span className="postLikeCounter"> {like}</span>
           <ThumbDown className="likeIcon"/>
-          <span className="postLikeCounter"> 21</span>
+          <span className="postLikeCounter">{dislike}</span>
           
         </div>
         <div className="postBottomRight">
@@ -43,8 +63,8 @@ export default function Post({post}) {
         </div>
       </div>
       <div className="postLikeDislike">
-          <div className="postThumbup"><ThumbUp /><p>Like</p></div>
-          <div className="postThumbDown"><ThumbDown/><p>Dislike</p></div>
+          <div className="postThumbup" onClick={likeHandler}><ThumbUp /><p>Like</p></div>
+          <div className="postThumbDown" onClick={dislikeHandler}><ThumbDown/><p>Dislike</p></div>
           <div className="postAddComment"><AddComment/><p>Comment</p></div>
           
       </div>
