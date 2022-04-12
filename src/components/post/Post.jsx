@@ -2,6 +2,9 @@ import React from 'react'
 import "./post.css"
 
 import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
+import { Users } from "../../dummyData";
+// import { useState } from "react";
+
 
 export default function Post() {
   return (
