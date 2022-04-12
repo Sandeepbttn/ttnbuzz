@@ -1,22 +1,23 @@
 .contacts{
     height: 50vh;
-    width: 20vw;
+    width: 25vw;
     overflow-y: scroll;
-    background-color: blue;
-    margin: 5%;
+    /* background-color: blue; */
+    margin: 3%;
 }
 
 .contactDetails{
     display: flex;
     cursor: pointer;
     align-content: center;
-    justify-content:space-around;
+    justify-content:space-evenly;
     padding: 3%;
 }
 
 .contactsName{
-    margin: 5px;
-    font-size: 18px;
+    padding: 5px;
+    /* margin-left: 2px; */
+    font-size: 20px;
 }
 .contactsImg{
     width: 42px;
