@@ -1,0 +1,43 @@
+
+.sharepost {
+    width: 95%;
+    height: 15vh;
+    margin: 3px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+  }
+  
+  .sharepostBox {
+    padding: 10px;
+  }
+
+  .sharepostTop {
+    display: flex;
+    align-items: center;
+  }
+  .shareProfileImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+
+  }
+
+  .sharepostInput {
+    border: none;
+    width: 70%;
+    height: 5vh;
+    border-radius: 10px;
+    background-color: rgb(247, 235, 211);
+  }
+
+  .sharepostIcon{
+    font-size: 18px;
+    margin-left: 5px;
+}
+
+.sharepostOptionText{
+    font-size: 18px;
+    margin-left: 5px;
+}

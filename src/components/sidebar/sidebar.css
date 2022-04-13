@@ -1,0 +1,43 @@
+.sidebar {
+    flex: 3;
+    height: calc(100vh - 50px);
+    position: sticky;
+    top: 50px;
+    margin: 5px;
+  }
+  
+  .userMiniProfile{
+     align-content: center;
+  }
+
+  .sidebarBox{
+    padding: 20px;
+    overflow-y: scroll;
+    position: sticky;
+  }
+
+  .sidebarBoxRecent{
+    padding: 10px;
+
+  }
+
+  .sidebarBoxBtn{
+  width: 150px;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: 500;
+  }
+
+  .sidebarBoxGroups{
+    padding: 10px;
+  }
+
+  .sidebarBoxSub{
+    padding: 10px;
+
+  }
+
+  .sidebarBoxList{
+  list-style: none;
+  }
