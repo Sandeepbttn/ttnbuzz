@@ -15,12 +15,6 @@ export default function Rightbar({profile}) {
           </span>
         </div>
         <img className="rightbarAd" src="https://i.pinimg.com/originals/30/5c/5a/305c5a457807ba421ed67495c93198d3.jpg" alt="" />
-        {/* <h4 className="rightbarTitle">Online Friends</h4>
-        <ul className="rightbarFriendList">
-          {Users.map((u) => (
-            <Online key={u.id} user={u} />
-          ))}
-        </ul> */}
       </>
     );
   };
@@ -40,7 +34,6 @@ export default function Rightbar({profile}) {
     <div className='rightbar'>
       <div className="rightbarWrapper">
         {profile ? <ProfileRightbar /> : <HomeRightbar />}
-        {/* <ProfileRightbar/> */}
       </div>  
     </div>
   )

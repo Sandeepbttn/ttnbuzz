@@ -4,10 +4,12 @@
     position: sticky;
     top: 50px;
     margin: 5px;
+    overflow-y: scroll;
   }
   
   .userMiniProfile{
      align-content: center;
+     box-shadow: 1px 19px 23px -6px rgba(0, 0, 0, 0.68);
   }
 
   .sidebarBox{
