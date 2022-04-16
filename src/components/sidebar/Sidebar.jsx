@@ -9,7 +9,7 @@ export default function Sidebar() {
       <div className="userMiniProfile">
         <UserMiniProfile/>
       </div>
-
+      <hr/>
       <div className="sidebarBox">
         <div className="sidebarBoxRecent">
           <p>Recent</p>

@@ -4,6 +4,7 @@
     position: sticky;
     top: 50px;
     margin: 5px;
+    overflow-y: scroll;
   }
   
   .userMiniProfile{
