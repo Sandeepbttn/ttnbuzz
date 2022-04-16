@@ -1,12 +1,13 @@
 import React from 'react'
 import './sidebar.css'
 import { RssFeed } from '@mui/icons-material'
+import UserMiniProfile from '../userMiniProfile/UserMiniProfile'
 
 export default function Sidebar() {
   return (
     <div className="sidebar">
       <div className="userMiniProfile">
-        <h1>user mini profile</h1>
+        <UserMiniProfile/>
       </div>
 
       <div className="sidebarBox">
