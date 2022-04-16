@@ -1,8 +1,8 @@
 import React from 'react'
 import "./profile.css"
 
-export default function Profle() {
+export default function Profile() {
   return (
-    <div>Profle</div>
+    <div>Profile</div>
   )
 }

@@ -1,19 +1,30 @@
-import React from 'react'
+import React, { useEffect , useState} from 'react'
 import "./post.css"
 
 import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
-import { Users } from "../../testData";
-import { useState } from "react";
+//import { Users } from "../../testData";
+import axios from 'axios';
+//import {format} from "timeago.js";
 
 
-export default function Post({post}) {
+export default function Post({ post }) {
 
   // like function
-  const [like,setLike] = useState(post.like)
+  const [like,setLike] = useState(post.like[0].length)
   const [isLiked,setIsLiked] = useState(false)
+  const [user, setUser] = useState({});
+         
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      const res = await axios.get(`http://localhost:3000/user/${post.userID}`);
+      setUser(res.data);
+    };  
+    fetchUser();
+  }, [post.userID]);
 
   const likeHandler =()=>{
-    setLike(isLiked ? like-1 : like+1)
+    setLike(isLiked ? like-1 : like+1) 
     setIsLiked(!isLiked)
   }
 
@@ -34,21 +45,21 @@ export default function Post({post}) {
         <div className="postTopLeft">
           <img
             className="postProfileImg"
-            src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
+            src={user.profilePicture}
             alt=""
           />
           <span className="postUsername">
-          {Users.filter((u) => u.id === post?.userId)[0].username}
+          {user.firstName} {user.lastName}
           </span>
-          <span className="postDate">{post.date}</span>
+          <span className="postDate">{post.createdAt}</span>
         </div>
         <div className="postTopRight">
           <MoreVert />
         </div>
       </div>
       <div className="postCenter">
-        <span className="postText">{post?.desc}</span>
-        <img className="postImg" src={post.photo} alt="post image" />
+        <span className="postText">{post.text}</span>
+        <div><img className="postImg" src={post.images} /></div>
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
