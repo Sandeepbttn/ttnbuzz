@@ -5,19 +5,20 @@ import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
 //import { Users } from "../../testData";
 import axios from 'axios';
 //import {format} from "timeago.js";
+import { Link } from 'react-router-dom';
 
 
 export default function Post({ post }) {
 
   // like function
-  const [like,setLike] = useState(post.like[0].length)
+  const [like,setLike] = useState(post.like.length)
   const [isLiked,setIsLiked] = useState(false)
   const [user, setUser] = useState({});
          
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`http://localhost:3000/user/${post.userID}`);
+      const res = await axios.get(`http://localhost:3000/user?userId=${post.userID}`);
       setUser(res.data);
     };  
     fetchUser();
@@ -30,7 +31,7 @@ export default function Post({ post }) {
 
   // dislike function
 
-  const [dislike,setDislike] = useState(post.dislike)
+  const [dislike,setDislike] = useState(post.dislike.length)
   const [isDisliked,setIsDisliked] = useState(false)
 
   const dislikeHandler =()=>{
@@ -43,15 +44,17 @@ export default function Post({ post }) {
     <div className="postWrapper">
       <div className="postTop">
         <div className="postTopLeft">
+          <Link to = {`profile/${user.firstName}`}>
           <img
             className="postProfileImg"
             src={user.profilePicture}
             alt=""
           />
+          </Link>
           <span className="postUsername">
           {user.firstName} {user.lastName}
           </span>
-          <span className="postDate">{post.createdAt}</span>
+          <span className="postDate">{post.dateCreated}</span>
         </div>
         <div className="postTopRight">
           <MoreVert />
@@ -59,7 +62,7 @@ export default function Post({ post }) {
       </div>
       <div className="postCenter">
         <span className="postText">{post.text}</span>
-        <div><img className="postImg" src={post.images} /></div>
+        <div><img className="postImg" src={post.images[0]} /></div>
       </div>
       <div className="postBottom">
         <div className="postBottomLeft">
