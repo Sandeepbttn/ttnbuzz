@@ -15,7 +15,7 @@ export default function Feed({firstName}) {
       : await axios.get("http://localhost:3000/post/timeline/624e94dc1a94895ce9bc355d")
       setPosts(res.data);    
     };
-    fetchPosts();
+    fetchPosts();  
   }, [firstName]);
 
   return (
