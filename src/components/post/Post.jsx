@@ -62,8 +62,8 @@ export default function Post({ post }) {
       </div>
       <div className="postCenter">
         <span className="postText">{post.text}</span>
-        <div><img className="postImg" src={post.images[0]} /></div>
-      </div>
+        <div><img className="postImg" src={ post.images[0].url } alt="buzzsnaps" /></div>
+      </div>   
       <div className="postBottom">
         <div className="postBottomLeft">
           <ThumbUp className="likeIcon"/>
