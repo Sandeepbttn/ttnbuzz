@@ -10,6 +10,7 @@ export default function Register() {
   const password = useRef();
   const passwordAgain = useRef();
   const navigate = useNavigate();
+  
 
 
   const handleClick = async (e) => {
@@ -82,7 +83,8 @@ export default function Register() {
             <button className="loginButton" type="submit">
               Sign Up
             </button>
-            <button className="loginRegisterButton">Log into Account</button>
+
+            <button className="loginRegisterButton" >Log into Account</button>
           </form>
         </div>
       </div>

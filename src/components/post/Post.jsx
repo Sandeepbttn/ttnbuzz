@@ -6,10 +6,13 @@ import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
 import axios from 'axios';
 //import {format} from "timeago.js";
 import { Link } from 'react-router-dom';
+// import {useContext} from 'react'
+// import { AuthContext } from "../../context/AuthContext";
 
 
 export default function Post({ post }) {
 
+  // const { users } = useContext(AuthContext);
   // like function
   const [like,setLike] = useState(post.like.length)
   const [isLiked,setIsLiked] = useState(false)
@@ -85,7 +88,11 @@ export default function Post({ post }) {
       <div className="postEnd">
       <img
             className="postProfileImg"
-            src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            src={
+              user.profilePicture
+                ? user.profilePicture
+                : "https://res.cloudinary.com/buzz-snaps/image/upload/v1650453947/noAvatar_mddqh4.png"
+            }
             alt=""
           />
       <input placeholder='Add comment' className='postComment'/>
