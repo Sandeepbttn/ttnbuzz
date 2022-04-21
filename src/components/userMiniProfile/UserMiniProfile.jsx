@@ -1,8 +1,10 @@
-import React from 'react'
+import {useContext} from 'react'
 import "./userMiniProfile.css"
-
+import { AuthContext } from "../../context/AuthContext";
 
 export default function UserMiniProfile() {
+
+  const { user } = useContext(AuthContext);
   return (
     
         <div className="miniprofile">
@@ -14,12 +16,17 @@ export default function UserMiniProfile() {
             />
             <img
               className="miniprofileUserImg"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD8r54g86MEGRzywLkkTTu8CVFuhz3XdIGGA&usqp=CAU.jpeg"
+              src={
+                user.profilePicture
+                  ? user.profilePicture
+                  : "https://res.cloudinary.com/buzz-snaps/image/upload/v1650453947/noAvatar_mddqh4.png"
+              }
               alt=""
             />
+            
           </div>
           <div className="miniprofileInfo">
-              <h3 className="miniprofileInfoName">Saloni Bhatia</h3>
+              <h3 className="miniprofileInfoName">{user.firstName}</h3>
               <span className="miniprofileInfoDesc">Hello my friends!</span>
           </div>
           <div className="miniprofileDetails">

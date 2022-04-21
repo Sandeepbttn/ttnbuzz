@@ -11,7 +11,7 @@ import Rightbar from '../../components/rightbar/Rightbar'
 
 export default function Profile() {
   const [ user, setUser] = useState({});
-  const params = useParams()
+  // const params = useParams()
   const firstName = useParams().firstName
 
   useEffect(() => {
