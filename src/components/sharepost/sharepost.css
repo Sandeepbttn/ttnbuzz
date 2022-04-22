@@ -31,10 +31,18 @@
     border-radius: 10px;
     background-color: rgb(247, 235, 211);
   }
-
+   .share{
+     display: flex;
+   }
   .sharepostIcon{
     font-size: 18px;
     margin-left: 5px;
+}
+.sharepostOption{
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  cursor: pointer;
 }
 
 .sharepostOptionText{
