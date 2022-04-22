@@ -1,4 +1,4 @@
-import React, { useEffect , useState} from 'react'
+import React, { useContext, useEffect , useState} from 'react'
 import "./post.css"
 
 import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
@@ -6,6 +6,7 @@ import { MoreVert ,ThumbUp,ThumbDown,AddComment} from '@mui/icons-material'
 import axios from 'axios';
 //import {format} from "timeago.js";
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthContext';
 // import {useContext} from 'react'
 // import { AuthContext } from "../../context/AuthContext";
 
@@ -17,7 +18,11 @@ export default function Post({ post }) {
   const [like,setLike] = useState(post.like.length)
   const [isLiked,setIsLiked] = useState(false)
   const [user, setUser] = useState({});
-         
+  const {user:currentUser} = useContext(AuthContext)
+   
+  useEffect(() => {
+    setIsLiked(post.like.includes(currentUser._id));
+  }, [currentUser._id, post.like]);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -28,7 +33,10 @@ export default function Post({ post }) {
   }, [post.userID]);
 
   const likeHandler =()=>{
-    setLike(isLiked ? like-1 : like+1) 
+    try{
+      axios.put("http://localhost:3000/post/like/"+post._id, {userID: currentUser._id})
+    } catch(err) {console.log(err)}
+    setLike(isLiked ? like-1: like+1);
     setIsLiked(!isLiked)
   }
 
@@ -36,8 +44,25 @@ export default function Post({ post }) {
 
   const [dislike,setDislike] = useState(post.dislike.length)
   const [isDisliked,setIsDisliked] = useState(false)
+  // const [user, setUser] = useState({});
+  // const {user:currentUser} = useContext(AuthContext)
+   
+  useEffect(() => {
+    setIsDisliked(post.dislike.includes(currentUser._id));
+  }, [currentUser._id, post.dislike])
+
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const res = await axios.get(`http://localhost:3000/user?userId=${post.userID}`);
+  //     setUser(res.data);
+  //   };  
+  //   fetchUser();
+  // }, [post.userID]);
 
   const dislikeHandler =()=>{
+    try{
+      axios.put("http://localhost:3000/post/dislike/"+post._id, {userID: currentUser._id})
+    } catch(err) {}
     setDislike(isDisliked ? dislike-1 : dislike+1)
     setIsDisliked(!isDisliked)
   }
@@ -50,7 +75,7 @@ export default function Post({ post }) {
           <Link to = {`profile/${user.firstName}`}>
           <img
             className="postProfileImg"
-            src={user.profilePicture}
+            src={user.profilePicture ? user.profilePicture : "https://res.cloudinary.com/buzz-snaps/image/upload/v1650453947/noAvatar_mddqh4.png"}
             alt=""
           />
           </Link>
