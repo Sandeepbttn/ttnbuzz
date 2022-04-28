@@ -36,7 +36,11 @@ export default function Profile() {
             />
             <img
               className="profileUserImg"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD8r54g86MEGRzywLkkTTu8CVFuhz3XdIGGA&usqp=CAU.jpeg"
+              src={
+                user.profilePicture
+                  ? user.profilePicture
+                  : "https://res.cloudinary.com/buzz-snaps/image/upload/v1650453947/noAvatar_mddqh4.png"
+              }
               alt=""
             />
           </div>
