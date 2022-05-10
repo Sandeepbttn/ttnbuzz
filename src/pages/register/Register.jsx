@@ -84,9 +84,11 @@ export default function Register() {
               Sign Up
             </button>
 
-            <button className="loginRegisterButton" ><Link to={'/login'}>
-            Log into Account
-            </Link></button>
+            <Link to={'/login'}>
+                <button className="loginRegisterButton" >
+                Log into Account
+                </button>
+            </Link>
           </form>
         </div>
       </div>
