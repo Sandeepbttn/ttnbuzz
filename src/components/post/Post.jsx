@@ -19,7 +19,7 @@ export default function Post({ post }) {
   const [isLiked,setIsLiked] = useState(false)
   const [user, setUser] = useState({});
   const {user:currentUser} = useContext(AuthContext)
-   
+     
   useEffect(() => {
     setIsLiked(post.like.includes(currentUser._id));
   }, [currentUser._id, post.like]);
@@ -45,7 +45,7 @@ export default function Post({ post }) {
   const [dislike,setDislike] = useState(post.dislike.length)
   const [isDisliked,setIsDisliked] = useState(false)
   // const [user, setUser] = useState({});
-  // const {user:currentUser} = useContext(AuthContext)
+  // const {user:currentUser} = useContext(AuthContext)  
    
   useEffect(() => {
     setIsDisliked(post.dislike.includes(currentUser._id));
@@ -90,14 +90,14 @@ export default function Post({ post }) {
       </div>
       <div className="postCenter">
         <span className="postText">{post.text}</span>
-        <div><img className="postImg" src={ post.images[0].url } alt="buzzsnaps" /></div>
+        <div><img className="postImg" src={ post.images[0]? post.images[0].url : "" } alt="buzzsnaps" /></div>
       </div>   
       <div className="postBottom">
         <div className="postBottomLeft">
           <ThumbUp className="likeIcon"/>
           <span className="postLikeCounter"> {like}</span>
           <ThumbDown className="likeIcon"/>
-          <span className="postLikeCounter">{dislike}</span>
+          <span className="postLikeCounter">{dislike}</span>  
           
         </div>
         <div className="postBottomRight">
@@ -126,3 +126,4 @@ export default function Post({ post }) {
   </div>
   )
 }
+   

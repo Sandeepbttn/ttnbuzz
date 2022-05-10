@@ -17,12 +17,12 @@ export default function Rightbar({profile}) {
         <img className="rightbarAd" src="https://i.pinimg.com/originals/30/5c/5a/305c5a457807ba421ed67495c93198d3.jpg" alt="" />
       </>
     );
-  };
+  };  
 
   const ProfileRightbar = () => {
     return (
       <>
-         <Contacts/>
+         <Contacts />
          <Suggestion/>
         
       </>
